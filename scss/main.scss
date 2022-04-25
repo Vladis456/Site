@@ -376,11 +376,30 @@ $hbg: #1B1A1B;
 	@include rwd(375) {
 		padding: 0px 16px;
 	}
-	
+	@include md {
+		padding: 0px 34px;
+	}
+	@include lg {
+		padding: 0px 36px;
+	}
+	@include xl {
+		padding: 0px 30px;
+	}
+	@include xxl {
+		padding: 0px 130px;
+	}
 }
 .header {
 	background-color: $hbg;
 	padding-top: 32px;
+	.container {
+		@include lad {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			
+		}
+	}
 	.header__logo {
 		margin-top: 3px;
 	}
@@ -391,24 +410,38 @@ $hbg: #1B1A1B;
 		
 	}
 	
-	.header__burger {
-		transition-property: margin-right;
-		transition-duration: 0.5s;
-		width: 60px;
-		height: 60px;
-		background-color: #6C0287;
-		position: absolute;
-		right: 0px;
-		top: 32px;
-		border-bottom-left-radius: 5px;
-		border-top-left-radius: 5px;
-		@include rwd(768) {
+	.header__burger { 
+		@include sm {
+			transition-property: margin-right;
+			transition-duration: 0.5s;
+			width: 60px;
+			height: 60px;
+			background-color: #6C0287;
+			position: absolute;
+			right: 0px;
+			top: 32px;
+			border-bottom-left-radius: 5px;
+			border-top-left-radius: 5px;
+			
+		}
+	
+		@include md {
+			transition-property: margin-right;
+			transition-duration: 0.5s;
 			width: 80px;
 			height: 80px;
+			background-color: #6C0287;
+			position: absolute;
+			right: 0px;
+			top: 32px;
+			border-bottom-left-radius: 5px;
+			border-top-left-radius: 5px;
 		}
 		
+		
 		span {
-			@include rwd(320) {
+		
+			@include sm {
 				width: 24px;
 				height: 2px;
 				background-color: #fff;
@@ -416,53 +449,97 @@ $hbg: #1B1A1B;
 				left: 18px;
 				top: 18px;
 			}
-			@include rwd(768){
+			
+			@include md {
 				width: 30px;
+				height: 2px;
 				top: 25px;
 				left: 25px;
+				background-color: #fff;
+				position: absolute;
 			}
 			&::before, &::after {
-				@include rwd(320) {
+				@include sm {
 					width: 24px;
 					height: 2px;
 					background-color: #fff;
 					position: absolute;
 					content: "";
 				}
-				@include rwd(768) {
+				@include md {
 					width: 30px;
+					
+					background-color: #fff;
+					position: absolute;
+					content: "";
+					height: 2px;
 				}
 			}
 			&::after {
-				@include rwd(320) {
+				@include sm {
 					top: 10px;
 				}
-				@include rwd(768) {
+				@include md {
 					top: 12px;
 				}
 			}
 			&::before {
-				@include rwd(320) {
+				@include sm {
 					top: 20px;
 				}
-				@include rwd(768) {
+				@include md {
 					top: 24px;
 				}
 			}
 		}
-
+		
 		.menu {
-			display: none;
-			background-color: #6C0287;
-			width: 300px;
-			height: 100vh;
-			margin-left: 59px;
-			position: fixed;
-			padding-left: 10%;
-			padding-top: 35px;
-			flex-direction: column;
-			gap: 20px;
-			
+			@include sm {
+				display: none;
+				background-color: #6C0287;
+				width: 300px;
+				height: 100vh;
+				margin-left: 59px;
+				position: fixed;
+				padding-left: 10%;
+				padding-top: 35px;
+				flex-direction: column;
+				gap: 20px;
+				.menu__item {
+					&:last-child {
+						display: none;
+					}
+				}
+			}
+			@include md {
+				display: none;
+				background-color: #6C0287;
+				width: 300px;
+				height: 100vh;
+				margin-left: 79px;
+				position: fixed;
+				padding-left: 5%;
+				padding-top: 35px;
+				flex-direction: column;
+				gap: 20px;
+				.menu__item {
+					&:last-child {
+						display: none;
+					}
+				}
+			}
+			@include lad {
+				display: flex;
+				gap: 40px;
+				align-items: center;
+				
+			}
+			.menu__button {
+				border: 2px solid #CD06FF;
+				background-color: #1B1A1B;
+				padding: 6px 24px;
+				border-radius: 10px;
+			}
 		}
 	}
 }
