@@ -422,7 +422,7 @@ $hbg: #1B1A1B;
 			top: 32px;
 			border-bottom-left-radius: 5px;
 			border-top-left-radius: 5px;
-			
+			z-index: 3;
 		}
 	
 		@include md {
@@ -526,6 +526,7 @@ $hbg: #1B1A1B;
 					&:last-child {
 						display: none;
 					}
+					
 				}
 			}
 			@include lad {
@@ -539,6 +540,14 @@ $hbg: #1B1A1B;
 				background-color: #1B1A1B;
 				padding: 6px 24px;
 				border-radius: 10px;
+				&:hover {
+					background-color: #CD06FF;
+				}
+				&:active {
+					background-color: #6C0287;
+					border-color: #6C0287;
+				}
+				
 			}
 		}
 	}
@@ -547,20 +556,90 @@ $hbg: #1B1A1B;
 .main {
 	.container {
 		background-color: #1B1A1B;
+		z-index: 1;
 		.title, .subtitle {
 			color: white;
 			text-align: center;
 		}
 		.title {
-			font-size: 36px;
+			font-size: 50px;
 			font-weight: 900;
 			text-transform: uppercase;
 			padding-top: 90px;
 			padding-bottom: 16px;
+			font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+			letter-spacing: -3px;
 		}
 		.subtitle {
-			font-size: 16px;
+			font-size: 18px;
+		}
+		.features-container {
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+			margin-top: 76px;
+			
+			.feature {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-end;
+				gap: 4px;
+				max-width: 142px;
+				.feature__inscription , .feature__description{
+					text-align: center;
+				}
+				.feature__inscription {
+					font-size: 50px;
+					color: #CD06FF;
+					font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+					
+				}
+				.feature__description {
+					font-size: 20px;
+					color: #fff;
+					line-height: 22px;
+				}
+			}
+			.features-bg {
+				background: url(../img/bg.png);
+				max-width: 254px;
+				height: auto;
+				position: absolute;
+				right: 0px;
+				z-index: 2;
+				
+			}
+			.feature:nth-child(2) {
+				margin-bottom: 85px;
+			}
+		}
+		.button-container {
+			display: flex;
+			justify-content: center;
+			padding-bottom: 100px;
+		}
+		.booking {
+			background-color: #6C0287;
+			border: none;
+			border-radius: 10px;
+			padding: 20px 54.61px;
+			box-shadow: 0px 0px 50px 0px #6C0287;
+			.booking__link {
+				padding: 20px;
+				font-size: 15px;
+				font-weight: bold;
+				color: #fff;
+				text-transform: uppercase;
+				text-decoration: none;
+			}
+			&:hover {
+				background-color: #CD06FF;
+			}
 			
 		}
+		
+
+		
+		
 	}
 }

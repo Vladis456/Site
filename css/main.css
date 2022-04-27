@@ -426,6 +426,7 @@ body {
     top: 32px;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
+    z-index: 3;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -547,22 +548,92 @@ body {
   padding: 6px 24px;
   border-radius: 10px;
 }
+.header .header__burger .menu .menu__button:hover {
+  background-color: #CD06FF;
+}
+.header .header__burger .menu .menu__button:active {
+  background-color: #6C0287;
+  border-color: #6C0287;
+}
 
 .main .container {
   background-color: #1B1A1B;
+  z-index: 1;
 }
 .main .container .title, .main .container .subtitle {
   color: white;
   text-align: center;
 }
 .main .container .title {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: 900;
   text-transform: uppercase;
   padding-top: 90px;
   padding-bottom: 16px;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+  letter-spacing: -3px;
 }
 .main .container .subtitle {
-  font-size: 16px;
+  font-size: 18px;
+}
+.main .container .features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-top: 76px;
+}
+.main .container .features-container .feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  max-width: 142px;
+}
+.main .container .features-container .feature .feature__inscription, .main .container .features-container .feature .feature__description {
+  text-align: center;
+}
+.main .container .features-container .feature .feature__inscription {
+  font-size: 50px;
+  color: #CD06FF;
+  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
+}
+.main .container .features-container .feature .feature__description {
+  font-size: 20px;
+  color: #fff;
+  line-height: 22px;
+}
+.main .container .features-container .features-bg {
+  background: url(../img/bg.png);
+  max-width: 254px;
+  height: auto;
+  position: absolute;
+  right: 0px;
+  z-index: 2;
+}
+.main .container .features-container .feature:nth-child(2) {
+  margin-bottom: 85px;
+}
+.main .container .button-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+.main .container .booking {
+  background-color: #6C0287;
+  border: none;
+  border-radius: 10px;
+  padding: 20px 54.61px;
+  box-shadow: 0px 0px 50px 0px #6C0287;
+}
+.main .container .booking .booking__link {
+  padding: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.main .container .booking:hover {
+  background-color: #CD06FF;
 }
 /*# sourceMappingURL=main.css.map */
